@@ -15,3 +15,13 @@ This Sinatra app has a database with the following schema.
 
 
 
+#Setup: 
+
+In the folder ActiveRecord_Associations_Drill_Skeleton, run the following commands.
+
+```
+  rake db:create
+  rake db:migrate
+```
+
+You are now setup to be able to add ActiveRecord Associations. 

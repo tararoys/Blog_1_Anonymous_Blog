@@ -1,3 +1,4 @@
 class Tea < ActiveRecord::Base
-  #ActiveRecord Associations Go here!
+  has_many :drinker_teas
+  has_many :drinkers, :through => :drinker_teas
 end
