@@ -25,3 +25,18 @@ In the folder ActiveRecord_Associations_Drill_Skeleton, run the following comman
 ```
 
 You are now setup to be able to add ActiveRecord Associations. 
+
+
+Don't edit the master project.  Instead, use
+
+```
+  git checkout -b YourNameHere/NumberOfTimesDrilled
+```
+
+For example, if this is your first drill, use
+
+```
+   git checkout -b Tara/Drill1
+```
+
+This will put you on a clean branch, so that you don't write over the main branch and have to delete stuff when you are getting started again. 
