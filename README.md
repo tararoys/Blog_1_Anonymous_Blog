@@ -22,9 +22,12 @@ In the folder ActiveRecord_Associations_Drill_Skeleton, run the following comman
 ```
   rake db:create
   rake db:migrate
+  rake db:create
 ```
 
-You are now setup to be able to add ActiveRecord Associations. 
+You are now setup to be able to add ActiveRecord Associations. You have empty models and some seed data to play with.  Suggestion: open the rake console and see if you know how to test if an assoication exists.  Close the rake console. Then open the model file, add one association, then open the rake console and test if you successfully hooked two models together.
+
+Have fun!
 
 
 Don't edit the master project.  Instead, use
