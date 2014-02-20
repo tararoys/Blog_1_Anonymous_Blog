@@ -3,7 +3,8 @@ class CreateSamples < ActiveRecord::Migration
     create_table :samples do |table|
       table.integer :drinker_id
       table.integer :tea_id
-      table.boolean :like
+      table.boolean :liked_the_tea
+      table.timestamps
     end
   end
 end
