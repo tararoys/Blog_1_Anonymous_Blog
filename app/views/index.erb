@@ -1,6 +1,7 @@
 
   <h1>Blahg</h1>
   <ul>
+    
     <% Post.all.each do |post| %>
       <li> <a href="/posts/<%=post.id%>"> <%= post.title %> </a> 
         <% post.tags.each do |tag| %>
@@ -9,8 +10,14 @@
       </li>
     <% end %>
   <ul>
-  <a id="login" href="/users/login"> login </a> <br> 
-  <a id="sign-up" href="/users/new"> sign-up </a> <br>
+
+  <%if !session[:user]%>
+    <a id="login" href="/users/login"> login </a> <br> 
+    <a id="sign-up" href="/users/new"> sign-up </a> <br>
+  <%else %>
+    <a id="logout" href="/users/logout"> logout </a>
+  <% end %>
+  
   <a href="/posts/new">create new post</a> <br>
 
 

@@ -1,15 +1,21 @@
 get "/posts/:id/edit" do 
-  @post=Post.find(params[:id])
-  erb :edit
+  unless session[:user]
+   @post=Post.find(params[:id])
+   erb :edit
+  else 
+    redirect "/"
+  end
 end 
 
 post "/posts/:id/edit" do 
+  unless session[:user]
   puts params[:post]
   post = Post.find(params[:id])
   puts post.inspect
   post.update_attributes(params[:post])
   puts post.inspect
   redirect "/posts/#{params[:id]}"
+  
 
 
 end

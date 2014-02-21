@@ -7,11 +7,12 @@ class User < ActiveRecord::Base
   end
 
   def self.authenticate(email, password)
+      
       user = User.where(email: email).first
       if user.password_hash == self.hashPassword(password)
-        true
+        user
       else
-        false
+        nil
       end
   end
 
