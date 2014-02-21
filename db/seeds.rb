@@ -1,3 +1,5 @@
+
+
 # zoe = Drinker.create(name: "Zoe", phone_number: 111222333)
 # inara = Drinker.create(name: "Inara", phone_number: 111222333)
 
