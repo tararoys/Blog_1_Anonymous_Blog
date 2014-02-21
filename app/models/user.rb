@@ -1,3 +1,9 @@
 class User < ActiveRecord::Base
-  # Remember to create a migration!
+  
+  require 'digest/sha1'
+
+  def self.hashPassword(password) 
+    hash_password = Digest::SHA1.hexdigest(password)
+  end
+
 end

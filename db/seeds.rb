@@ -12,3 +12,6 @@ one_focus_anger = PostTag.create(post_id: one_focus.id, tag_id: anger.id)
 two_focus_add   = PostTag.create(post_id: two_focus.id, tag_id:   add.id)
 two_focus_anger = PostTag.create(post_id: two_focus.id, tag_id: anger.id)
 
+#---------------------
+simon = User.create(email: "simon@serenity.gtx",  password_hash: User.hashPassword("password"))
+book  = User.create(email: "book@serenity.gtx" ,  password_hash: User.hashPassword("password"))
