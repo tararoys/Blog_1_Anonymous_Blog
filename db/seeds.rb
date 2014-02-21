@@ -1,14 +1,14 @@
 
 
-# zoe = Drinker.create(name: "Zoe", phone_number: 111222333)
-# inara = Drinker.create(name: "Inara", phone_number: 111222333)
+one_focus = Post.create(title: "One Focus", content: "Don't ask me to focus on more than one thing. ")
+two_focus = Post.create(title: "Two Focus", content: "Focusing on two things drives me totally nuts.")
 
-# forever_nuts = Tea.create(name: "Forever Nuts", description: "Walnut Tea")
-# chocolate_rocket = Tea.create(name: "Chocolate Rocket", description: "chocolately black tea")
+add   = Tag.create(text: "ADD"   )
+anger = Tag.create(text: "anger" )
 
-# zoe_hates_forever_nuts = Sample.create(drinker_id: zoe.id, tea_id: forever_nuts.id, liked_the_tea: false)
-# zoe_hates_chocolate_rocket = Sample.create(drinker_id: zoe.id, tea_id: chocolate_rocket.id, liked_the_tea: false)
+one_focus_add   = PostTag.create(post_id: one_focus.id, tag_id:   add.id)
+one_focus_anger = PostTag.create(post_id: two_focus.id, tag_id: anger.id)
 
-# inara_likes_forever_nuts = Sample.create(drinker_id: inara.id, tea_id: forever_nuts.id, liked_the_tea: true)
-# inara_likes_chocolate_rocket = Sample.create(drinker_id: inara.id, tea_id: chocolate_rocket.id, liked_the_tea: true)
+two_focus_add   = PostTag.create(post_id: one_focus.id, tag_id:   add.id)
+two_focus_anger = PostTag.create(post_id: two_focus.id, tag_id: anger.id)
 
