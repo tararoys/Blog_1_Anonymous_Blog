@@ -21,6 +21,8 @@ end
 
 post "/users" do
   new_user  = User.create(email: params[:email] ,  password_hash: User.hashPassword(params[:password]))
+  puts new_user.valid?
+  puts new_user.errors.inspect
   redirect "/"
 end
 
