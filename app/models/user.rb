@@ -6,4 +6,13 @@ class User < ActiveRecord::Base
     hash_password = Digest::SHA1.hexdigest(password)
   end
 
+  def self.authenticate(email, password)
+      user = User.where(email: email).first
+      if user.password_hash == self.hashPassword(password)
+        true
+      else
+        false
+      end
+  end
+
 end
