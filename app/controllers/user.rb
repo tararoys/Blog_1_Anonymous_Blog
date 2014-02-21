@@ -21,7 +21,7 @@ end
 
 post "/users" do
   new_user  = User.create(email: params[:email] ,  password_hash: User.hashPassword(params[:password]))
-  redirect "/users/#{new_user.id}"
+  redirect "/"
 end
 
 get "/users/:id/edit" do

@@ -1,4 +1,13 @@
 class User < ActiveRecord::Base
+
+  validates :email, :presence => true
+  validates :email, :uniqueness => true
+
+  validates :email,
+            :format => {
+              :with    => /^([^\s]+)((?:[-a-z0-9]\.)[a-z]{2,})$/i,
+              :message => "Only letters allowed" }#[better to validate emails with a gem]( http://www.stormconsultancy.co.uk/blog/development/validating-email-addresses-in-rails/)
+   validates :password_hash, :presence => true
   
   require 'digest/sha1'
 
