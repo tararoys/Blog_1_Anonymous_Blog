@@ -1,5 +1,5 @@
 get "/posts/:id/edit" do 
-  unless session[:user]
+  if session[:user]
    @post=Post.find(params[:id])
    erb :edit
   else 
@@ -8,30 +8,43 @@ get "/posts/:id/edit" do
 end 
 
 post "/posts/:id/edit" do 
-  unless session[:user]
-  puts params[:post]
-  post = Post.find(params[:id])
-  puts post.inspect
-  post.update_attributes(params[:post])
-  puts post.inspect
-  redirect "/posts/#{params[:id]}"
-  
-
-
+  if session[:user]
+    puts params[:post]
+    post = Post.find(params[:id])
+    puts post.inspect
+    post.update_attributes(params[:post])
+    puts post.inspect
+    redirect "/posts/#{params[:id]}"
+  else 
+    redirect "/"
+  end
 end
 
 get "/posts/new" do
-  erb :new_post
+  if session[:user]
+    erb :new_post
+  else
+    redirect "/"
+  end
 end
 
 post "/posts" do 
-  puts params
-  post = Post.create(params[:post])
-  redirect "/posts/#{post.id}"
+  if session[:user]
+    puts params
+    post = Post.create(params[:post])
+    redirect "/posts/#{post.id}"
+  else
+    redirect "/"
+  end
 end
 
 get "/posts/:id" do 
-  @post = Post.find(params[:id]);
-  erb :post
+  puts session[:user]
+  if session[:user]
+    @post = Post.find(params[:id]);
+    erb :post
+  else
+    redirect "/"
+  end
 end 
 
