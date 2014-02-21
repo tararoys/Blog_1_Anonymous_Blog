@@ -2,11 +2,12 @@
   <h1>Blahg</h1>
   <ul>
     <% Post.all.each do |post| %>
-      <li> <%= post.title %> 
+      <li> <a href="/posts/<%=post.id%>"> <%= post.title %> </a> 
         <% post.tags.each do |tag| %>
           <%= tag.text %>
         <% end %>
       </li>
     <% end %>
   <ul>
+  <a href="/posts/new">create new post</a>
 </div>
